@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Covid-19</title>
+		<style>
+			body, form{
+				margin:20px auto;
+				max-width:800px;
+				overflow-x:hidden;
+			}
+			fieldset{
+				display: flex;
+			}
+			input#description{
+				flex-grow:50;
+				margin: 0 20px;
+			}
+			input#location{
+				flex-grow:50;
+				margin: 0 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="vaccines" method="get">
+			<fieldset>
+				<legend>Covid-19</legend>
+				<label for="description">Search Country:</label>
+				<input id="description" name="country" type="text" />
+				<input type="submit" />
+			</fieldset>
+		</form>
+	</body>
+</html>

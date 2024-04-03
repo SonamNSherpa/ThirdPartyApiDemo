@@ -1,0 +1,28 @@
+title Final Project
+
+participant Covid-19 API[A]
+participant User
+participant Server
+participant AirVisual API[B]
+
+entryspacing 0.8
+User->(1)Server:User requests "/" (root of our site)\nGET /HTTP/1.1
+Server->(1)User:[ACK] Sends 200 Okay, Returns index.html (form)\nHTTP/1.1 200 OK (text/html)
+User->(1)Server:User fills out form (supplies data: **Country**) \nBrowser requests "/cases" (root of our site)\nGET /cases?country=Nepal HTTP/1.1 
+
+Server->Covid-19 API[A]:User's input is accepted in to make a request to the Covid-19 API.
+Server<-Covid-19 API[A]:200, Data created and sent back to Server.\nServer stores this data. 
+
+note over Server:Server prints the data into its console. 
+
+AirVisual API[B]<-Server:Immediately, new request is made to the AirVisual API. \nSends request along with Country, City, State and API key \nparsed in the request. 
+AirVisual API[B]->Server:200, Upon the API key being valid/correct, the data is sent back to the server. 
+User<-Server:Server combines the first data with the second data and sends it to the user. \nHTTP/1.1 200 Ok (text/plain)
+
+
+
+
+
+
+
+
